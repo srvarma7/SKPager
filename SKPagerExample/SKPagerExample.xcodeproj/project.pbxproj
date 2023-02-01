@@ -13,6 +13,7 @@
 		E503A577298A64580041A3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E503A575298A64580041A3ED /* Main.storyboard */; };
 		E503A579298A645B0041A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E503A578298A645B0041A3ED /* Assets.xcassets */; };
 		E503A57C298A645B0041A3ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E503A57A298A645B0041A3ED /* LaunchScreen.storyboard */; };
+		E503A589298A6C580041A3ED /* SKPager in Frameworks */ = {isa = PBXBuildFile; productRef = E503A588298A6C580041A3ED /* SKPager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E503A578298A645B0041A3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E503A57B298A645B0041A3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E503A57D298A645B0041A3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E503A586298A6C300041A3ED /* SKPager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SKPager; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E503A589298A6C580041A3ED /* SKPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				E503A56E298A64580041A3ED /* SKPagerExample */,
 				E503A56D298A64580041A3ED /* Products */,
+				E503A587298A6C580041A3ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +71,14 @@
 			path = SKPagerExample;
 			sourceTree = "<group>";
 		};
+		E503A587298A6C580041A3ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E503A586298A6C300041A3ED /* SKPager */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +95,9 @@
 			dependencies = (
 			);
 			name = SKPagerExample;
+			packageProductDependencies = (
+				E503A588298A6C580041A3ED /* SKPager */,
+			);
 			productName = SKPagerExample;
 			productReference = E503A56C298A64580041A3ED /* SKPagerExample.app */;
 			productType = "com.apple.product-type.application";
@@ -358,6 +373,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E503A588298A6C580041A3ED /* SKPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SKPager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E503A564298A64580041A3ED /* Project object */;
 }
