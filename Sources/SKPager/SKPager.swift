@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SKBar
+import EasyPeasy
 
 public enum ScrollDirection {
     case left, right
