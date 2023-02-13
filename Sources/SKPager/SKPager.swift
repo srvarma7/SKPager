@@ -19,9 +19,8 @@ public protocol SKPagerDelegate: AnyObject {
 
 public class SKPager: UIPageViewController {
     private var lastContentOffset: CGPoint = .zero
-    private var preventScrollBug = true
     
-    weak public  var pagerDelegate: SKPagerDelegate?
+    public weak var pagerDelegate: SKPagerDelegate?
     
     public var scrollView: UIScrollView?
     
