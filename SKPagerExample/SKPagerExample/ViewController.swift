@@ -47,7 +47,30 @@ class ViewController: UIViewController {
         return bar
     }()
     
-    let spacing: CGFloat = 20
+    lazy var skBarEx2: SKBar = {
+        let config = SKBarConfiguration(titleColor: .black.withAlphaComponent(0.3),
+                                        font: .systemFont(ofSize: 18),
+                                        selectedTitleColor: .white,
+                                        selectedFont: .systemFont(ofSize: 18),
+                                        highlightedTitleColor: .systemBlue,
+                                        indicatorColor: .systemBlue,
+                                        separatorColor: .clear)
+        
+        
+        let titleTheme: SKBarContentType = .title
+        
+        lazy var skBar = SKBar(frame: .zero, theme: titleTheme)
+        
+        let padding: CGFloat = 20
+        skBar.contentInset = UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+        skBar.interItemSpacing = 4
+        skBar.configuration = config
+        skBar.indicatorStyle = .capsule
+        skBar.indicatorCornerRadius = 20
+        skBar.minimumItemWidth = 40
+        
+        return skBar
+    }()
     
     lazy var pageController: SKPager = {
         let pc = SKPager(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -69,6 +92,12 @@ class ViewController: UIViewController {
         skBarEx1.items = titles
         skBarEx1.setSelectedIndex(0)
         
+        view.addSubview(skBarEx2)
+        skBarEx2.easy.layout(Top(10).to(skBarEx1, .bottom), Leading(), Trailing(), Height(50))
+        skBarEx2.delegate = self
+        skBarEx2.items = titles
+        skBarEx2.setSelectedIndex(0)
+        
         for color in colors {
             let vc1 = UIViewController()
             vc1.view.backgroundColor = color.withAlphaComponent(0.1)
@@ -77,7 +106,7 @@ class ViewController: UIViewController {
         
         addChild(pageController)
         view.addSubview(pageController.view)
-        pageController.view.easy.layout(Top().to(skBarEx1, .bottom),
+        pageController.view.easy.layout(Top(10).to(skBarEx2, .bottom),
                                         Leading(),
                                         Trailing(),
                                         Bottom().to(view, .bottom))
@@ -96,10 +125,11 @@ extension ViewController: SKBarDelegate {
     func didSelectSKBarItemAt(_ skBar: SKBar, _ index: Int) {
         print("selected index", index)
         
-        canMoveIndicator = false
         if index > currentIndex  {
+            canMoveIndicator = false
             self.focusViewControllerAtIndex(index, direction: .forward)
         } else if index <  self.currentIndex {
+            canMoveIndicator = false
             self.focusViewControllerAtIndex(index, direction: .reverse)
         }
     }
@@ -123,6 +153,7 @@ extension ViewController: SKBarDelegate {
             if completed {
                 self.currentIndex = index
                 self.skBarEx1.setSelectedIndex(index)
+                self.skBarEx2.setSelectedIndex(index)
                 self.canMoveIndicator = true
             }
         }
@@ -173,12 +204,14 @@ extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDe
         
         if finished {
             skBarEx1.setSelectedIndex(currentIndex)
+            skBarEx2.setSelectedIndex(currentIndex)
             canMoveIndicator = true
         }
         
         if finished && completed {
             currentIndex = index
             skBarEx1.setSelectedIndex(currentIndex)
+            skBarEx2.setSelectedIndex(currentIndex)
             canMoveIndicator = true
         }
     }
@@ -210,6 +243,7 @@ extension ViewController: SKPagerDelegate {
         print("percentage", percentage, "percentage > 0.0", percentage > 0.0, "scrollDirection", scrollDirection, "canMoveIndicator", canMoveIndicator, "currentIndex", currentIndex, "toIndex", toIndex)
         if let toIndex, percentage > 0.0 {
             skBarEx1.moveIndicator(forPercentage: percentage, from: currentIndex, to: toIndex)
+            skBarEx2.moveIndicator(forPercentage: percentage, from: currentIndex, to: toIndex)
         }
     }
 }
