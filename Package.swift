@@ -12,13 +12,13 @@ let package = Package(
     ],
     dependencies: [
 //        .package(url: "https://github.com/srvarma7/SKBar", branch: "hotfix/indication_percentage_animation"),
-        .package(url: "https://github.com/srvarma7/SKBar", revision: "v1.0.2")
+//        .package(url: "https://github.com/srvarma7/SKBar", revision: "v1.0.2")
     ],
     targets: [
         .target(
             name: "SKPager",
             dependencies: [
-                "SKBar"
+//                "SKBar"
             ]),
         .testTarget(
             name: "SKPagerTests",

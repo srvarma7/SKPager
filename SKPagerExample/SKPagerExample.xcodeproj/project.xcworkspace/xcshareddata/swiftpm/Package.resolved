@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "easypeasy",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nakiostudio/EasyPeasy",
+      "state" : {
+        "revision" : "b0028f63d47bcb32e37d8abb9cc5d5a781742a4e",
+        "version" : "1.10.0"
+      }
+    },
+    {
+      "identity" : "skbar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/srvarma7/SKBar",
+      "state" : {
+        "revision" : "73811afd0265c0d88a3e68468b659780a25c2fd0",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
