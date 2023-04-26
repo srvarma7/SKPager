@@ -14,6 +14,8 @@
 		E503A579298A645B0041A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E503A578298A645B0041A3ED /* Assets.xcassets */; };
 		E503A57C298A645B0041A3ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E503A57A298A645B0041A3ED /* LaunchScreen.storyboard */; };
 		E503A589298A6C580041A3ED /* SKPager in Frameworks */ = {isa = PBXBuildFile; productRef = E503A588298A6C580041A3ED /* SKPager */; };
+		E51E817129BF6805008CA453 /* SKBar in Frameworks */ = {isa = PBXBuildFile; productRef = E51E817029BF6805008CA453 /* SKBar */; };
+		E54223E429F8E73C00BD8375 /* NewPagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54223E329F8E73C00BD8375 /* NewPagerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,7 @@
 		E503A57B298A645B0041A3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E503A57D298A645B0041A3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E503A586298A6C300041A3ED /* SKPager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SKPager; path = ..; sourceTree = "<group>"; };
+		E54223E329F8E73C00BD8375 /* NewPagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPagerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51E817129BF6805008CA453 /* SKBar in Frameworks */,
 				E503A589298A6C580041A3ED /* SKPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +67,7 @@
 				E503A56F298A64580041A3ED /* AppDelegate.swift */,
 				E503A571298A64580041A3ED /* SceneDelegate.swift */,
 				E503A573298A64580041A3ED /* ViewController.swift */,
+				E54223E329F8E73C00BD8375 /* NewPagerVC.swift */,
 				E503A575298A64580041A3ED /* Main.storyboard */,
 				E503A578298A645B0041A3ED /* Assets.xcassets */,
 				E503A57A298A645B0041A3ED /* LaunchScreen.storyboard */,
@@ -97,6 +102,7 @@
 			name = SKPagerExample;
 			packageProductDependencies = (
 				E503A588298A6C580041A3ED /* SKPager */,
+				E51E817029BF6805008CA453 /* SKBar */,
 			);
 			productName = SKPagerExample;
 			productReference = E503A56C298A64580041A3ED /* SKPagerExample.app */;
@@ -126,6 +132,9 @@
 				Base,
 			);
 			mainGroup = E503A563298A64580041A3ED;
+			packageReferences = (
+				E51E816F29BF6805008CA453 /* XCRemoteSwiftPackageReference "SKBar" */,
+			);
 			productRefGroup = E503A56D298A64580041A3ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E503A574298A64580041A3ED /* ViewController.swift in Sources */,
+				E54223E429F8E73C00BD8375 /* NewPagerVC.swift in Sources */,
 				E503A570298A64580041A3ED /* AppDelegate.swift in Sources */,
 				E503A572298A64580041A3ED /* SceneDelegate.swift in Sources */,
 			);
@@ -376,10 +386,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E51E816F29BF6805008CA453 /* XCRemoteSwiftPackageReference "SKBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/srvarma7/SKBar.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		E503A588298A6C580041A3ED /* SKPager */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SKPager;
+		};
+		E51E817029BF6805008CA453 /* SKBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E51E816F29BF6805008CA453 /* XCRemoteSwiftPackageReference "SKBar" */;
+			productName = SKBar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
