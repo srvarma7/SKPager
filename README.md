@@ -1,5 +1,6 @@
-# SKPager
+# SKPager Demo
 
-Demo
+<div align="center"> 
+SKPager works with the help of SKBar (https://github.com/srvarma7/SKBar) as a top bar to control the pager.
 
-![ezgif-3-8966556c5d](https://github.com/srvarma7/SKPager/assets/48859937/9fee67ff-2dba-46dd-8ac7-c18fbf2c4768)
+![ezgif-7-a07291eee4](https://github.com/srvarma7/SKPager/assets/48859937/951dabc4-c4b6-4377-bbfa-6746f69f535c)
